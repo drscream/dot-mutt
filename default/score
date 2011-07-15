@@ -1,0 +1,22 @@
+# Thomas Merkel <tm@core.io>
+
+# inspired by ideas of (at least):
+# - Wolfram Schlich <wolfram@schlich.org>
+
+## scoring
+  set score
+  set score_threshold_delete = -1
+  set score_threshold_flag = 1024
+  set score_threshold_read = -1
+
+## the actual scores
+unscore *
+  score ~R 2
+  score ~O 4
+  score ~N 8
+  score ~p 16
+  score ~P 32
+  score ~l 64
+  score ~k 128
+  score ~g 256
+  score ~G 512

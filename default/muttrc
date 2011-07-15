@@ -1,0 +1,150 @@
+# Thomas Merkel <tm@core.io>
+
+# generic
+unset abort_nosubject
+  set abort_unmodified
+  set allow_8bit
+unset allow_ansi
+unset arrow_cursor
+  set auto_tag
+  set autoedit
+unset ascii_chars
+  set beep
+  set beep_new
+unset bounce_delivered
+  set charset = utf-8
+  set collapse_unread
+  set confirmappend
+  set confirmcreate
+  set copy
+  set delete = ask-yes
+# set display_filter = "tr '\015' ' '"
+# set dotlock_program = /usr/bin/mutt_dotlock
+  set dsn_notify = "failure,delay" # RFC1894
+  set dsn_return = "hdrs"
+  set editor = "vim +'set textwidth=70' +'set nohls'"
+  set edit_headers
+  set envelope_from
+# set escape = "~"
+  set fast_reply
+  set fcc_attach		# save fcc attachments along with the body
+unset fcc_clear			# save fcc crypted and signed (if applicable)
+# set folder = ~/.maildir
+  set followup_to
+unset forward_decode
+unset forward_decrypt
+  set forward_format = "[%a: %s]"
+unset forward_quote
+  set hdrs
+unset header
+  set help
+  set hide_missing
+  set history = 1024
+unset honor_followup_to
+  set ignore_list_reply_to
+unset ignore_linear_white_space
+  set implicit_autoview
+  set include
+  set indent_string = "> "
+  set locale = "de_DE"
+  set mail_check = 5
+  set mailcap_path = "~/.mutt/default/mailcap"
+# set mailcap_sanitize
+  set mark_old
+#ifdef mark_macro_prefix set mark_macro_prefix = \\\'
+  set mbox = !
+  set mbox_type = Maildir
+unset metoo
+  set menu_scroll
+  set mime_forward = ask-no
+unset mime_forward_decode  
+unset move
+  set pager = builtin
+  set pager_context = 5
+  set pager_index_lines = `((stty size 2>/dev/null || echo 24 80); echo s0 5/1+p) | dc`
+  set pager_stop
+unset pipe_decode
+  set pipe_sep = "\n"
+  set pipe_split  
+unset post_indent_string
+  set postpone = ask-no
+  set postponed = +.Postponed
+  set print = yes
+  set print_command = "muttprint"
+  set print_split
+  set query_command = "abook --mutt-query '%s'"
+  set quit = yes
+  set quote_regexp = "^( {0,4}[>|:%]| {0,4}[a-z0-9]+[>|]+|[-][>]|[<][>] )+"
+  set read_inc = 25
+  set reply_regexp = "^(((aw|antw(ort)?|re|betr(\\.?|eff)|f(or)?w(ar)?d)(\\^?[0-9^])?:?|)[ \t]+(\[.*\])?)*"
+  set reply_to = ask-yes
+  set resolve
+  set reverse_alias
+  set rfc2047_parameters
+unset save_address
+  set save_empty
+unset save_name
+  set send_charset = "us-ascii:iso-8859-1:iso-8859-15:utf-8"
+  set sendmail_wait = 10
+  set shell = /bin/bash
+  set header_cache = "~/.mutt/hcache"
+  set sig_dashes
+  set smart_wrap
+  set smileys = "(>From )|(:[-^]?[][)(><}{|/DP])"		# quoting
+  set sort_alias = alias
+  set sort_browser = alpha								# reverse-last-date
+unset sort_re
+  set spoolfile = +
+  set status_on_top
+unset suspend
+  set thorough_search
+  set to_chars = " +TCFL"
+## cd's trash patch
+#ifdef trash set trash = +.INBOX.Trash
+  set uncollapse_jump
+unset use_8bitmime
+  set use_domain
+  set use_from
+unset use_ipv6
+  set user_agent
+unset wait_key
+  set wrap = 0
+  set wrap_search
+  set write_inc = 25
+
+# view formats
+  set alias_format = "%4n %t %-15a %r"
+  set attach_format = " %u%D%t%2n %T%.40d%> [%.7m/%.10M, %.6e, %s]"
+  set date_format = "!%a, %b %d, %Y at %I:%M:%S%p %Z"
+  set folder_format = "%3C %12d %4N %-40f %> Z:%10sb"
+  set forward_format = "[Fwd: %s]"
+#  set index_format = "%4C %Z %4N %[!%Y-%m-%d %H:%M] %-25.25F %s %> %?y?[%y]? A:%?X?%2X&  ? L:%5l Z:%5c"
+  set index_format = "%4C %Z %4N %[!%Y-%m-%d %H:%M] %-25.25F %s %> %?y?[%y]?"
+  set pager_format = "-%Z- %C/%m: %-20.20n %s"
+  set status_format = "-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)---"
+
+# content
+auto_view text/x-diff text/x-vcard text/html application/msword image/* application/x-image application/x-perl text/calendar
+alternative_order text/plain text/enriched text/html text/calendar
+
+# headers in the pager
+  ignore *
+unignore from: date: subject: to: cc: message-id: in-reply-to: user-agent: resent- reply-to: mail-followup-to:
+unignore newsgroups: references: posted-to: followup-to: nntp-posting-host:
+unignore organization: organisation: x-
+unignore lines:
+# ignore x-status: x-uidl: x-attribution: x-authentication-warning: x-mime: x-msmail-priority: x-priority:
+unhdr_order *
+  hdr_order message-id: in-reply-to: references: path: received: date: expiry-date: nntp-posting-host: sender return-path from from: organization: organisation: resent- reply-to: mail-followup-to: mail-copies-to: errors-to: to: cc: delivered-to: mailing-list: list- newsgroups: followup-to: subject: importance: status: precedence: old- content- mime- x- user-agent: lines:
+
+# source some important files - default profile
+source ~/.mutt/default/attachments
+source ~/.mutt/default/bindings
+source ~/.mutt/default/colors
+source ~/.mutt/default/hooks
+source ~/.mutt/default/macros
+source ~/.mutt/default/pgp
+source ~/.mutt/default/score
+
+# show version on startup
+exec show-version

@@ -1,0 +1,42 @@
+# Thomas Merkel <tm@core.io>
+
+#text/plain; cat %s; copiousoutput
+text/calendar; cat %s; copiousoutput
+#text/x-java; cat %s; copiousoutput
+text/x-java; source-highlight -s java -f esc --style-file=esc.style -n -i %s; copiousoutput
+audio/mpeg; mpg321 %s
+#application/ogg; ogg123 %s
+application/ogg; mp3blaster --dont-quit %s
+application/pgp-signature; cat %s; copiousoutput
+application/x-pkcs7-signature; cat %s; copiousoutput
+text/html; links -dump %s; copiousoutput; nametemplate=%s.html
+message/html; links -dump %s; copiousoutput; nametemplate=%s.html
+#text/html; vilistextum --remove-empty-alt --no-image --shrink-lines --links %s - ; copiousoutput
+#message/html; vilistextum --remove-empty-alt --no-image --shrink-lines --links %s - ; copiousoutput
+text/x-diff; cat %s; copiousoutput
+text/diff; cat %s; copiousoutput
+application/x-sh; cat %s; copiousoutput
+application/x-shellscript; cat %s; copiousoutput
+text/x-sh; cat %s; copiousoutput
+text/x-vcard; ~/.mutt/bin/mutt-vcard-filter.pl; copiousoutput
+#image/*; image2ascii %s; copiousoutput
+#application/x-image; image2ascii %s; copiousoutput
+#application/x-gunzip; gunzip -c %s; copiousoutput
+#application/x-gzip; gunzip -c %s; copiousoutput
+#application/x-bunzip2; bunzip2 -c %s; copiousoutput
+application/x-zip-compressed; unzip -Z -l -h %s; copiousoutput
+application/x-tar-gz; gunzip -c %s | tar -tf -; copiousoutput
+application/x-tar; tar -tf %s; copiousoutput
+application/x-gtar; gunzip -c %s | tar -tf -; copiousoutput
+application/x-rpm; rpm -qlp %s; copiousoutput
+application/msword; antiword %s; copiousoutput
+application/vnd.msword; antiword %s; copiousoutput
+application/excel; excel2text %s; copiousoutput
+application/msexcel; excel2text %s; copiousoutput
+application/vnd.ms-excel; excel2text %s; copiousoutput
+application/x-excel; excel2text %s; copiousoutput
+application/x-msexcel; excel2text %s; copiousoutput
+application/ms-Excel; excel2text %s; copiousoutput
+application/rtf; rtf2text %s; copiousoutput
+application/pdf; pdftotext %s -; copiousoutput
+application/ms-tnef; tnef2txt %s; copiousoutput

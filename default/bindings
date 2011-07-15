@@ -1,0 +1,69 @@
+# Thomas Merkel <tm@core.io>
+
+# pager (message content)
+bind pager   <return> exit
+bind pager   <space>  exit
+bind pager   <up>     previous-line
+bind pager   <down>   next-line
+bind pager   <left>   previous-entry
+bind pager   <right>  next-entry
+bind pager   <        top
+bind pager   >        bottom
+bind pager   l        list-reply
+bind pager   <delete> delete-message
+bind pager   <esc>f   forget-passphrase
+bind pager   F        flag-message
+bind pager   f        forward-message
+bind pager   \Cf      followup-message
+bind pager   G        group-reply
+bind pager   \Cn      search-next
+bind pager   \Cp      search-opposite
+bind pager   p        post-message
+#ifdef purge-message bind pager P purge-message
+
+# index (message list)
+bind index   <return> display-message
+bind index   <space>  display-message
+bind index   <right>  display-message
+bind index   <up>     previous-entry
+bind index   <down>   next-entry
+bind index   <        first-entry
+bind index   >        last-entry
+bind index   l        list-reply
+bind index   L        limit
+bind index   p        post-message
+bind index   <delete> delete-message
+bind index   <esc>f   forget-passphrase
+bind index   F        flag-message
+bind index   f        forward-message
+bind index   \Cf      followup-message
+bind pager   G        group-reply
+bind index   <esc>g   get-message
+bind index   \Cn      search-next
+bind index   \Cp      search-opposite
+bind index   <esc>v   collapse-thread
+bind index   p        post-message
+#ifdef purge-message bind index P purge-message
+#ifdef mark-message bind index ~ mark-message
+
+# browser (folder list)
+bind browser <return> select-entry
+bind browser <right>  select-entry
+bind browser <left>   exit
+bind browser <        first-entry
+bind browser >        last-entry
+bind browser C        check-new
+bind browser p        search-opposite
+
+# compose menu
+bind compose p        pgp-menu
+bind compose f        edit-from
+bind compose F        edit-fcc
+bind compose <esc>f   forget-passphrase
+bind compose \Cf      filter-entry
+bind compose <insert> attach-file
+bind compose <delete> detach-file
+
+# attachments menu
+bind attach  <left>   exit
+bind attach  <right>  view-attach

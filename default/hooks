@@ -1,0 +1,76 @@
+# Thomas Merkel <tm@core.io>
+
+# inspired by ideas of (at least):
+# - Wolfram Schlich <wolfram@schlich.org>
+
+# aliases for broken OS^H^HMUAs
+charset-hook windows-1250 CP1250
+charset-hook windows-1251 CP1251
+charset-hook windows-1252 CP1252
+charset-hook windows-1253 CP1253
+charset-hook windows-1254 CP1254
+charset-hook windows-1255 CP1255
+charset-hook windows-1256 CP1256
+charset-hook windows-1257 CP1257
+charset-hook windows-1258 CP1258
+charset-hook x-unknown ISO-8859-1
+
+# compressed folders patch
+open-hook \\.gz$ "gzip -cd %f > %t"
+close-hook \\.gz$ "gzip -c %t > %f"
+append-hook \\.gz$ "gzip -c %t >> %f"
+
+open-hook \\.bz2$ "bzip2 -cd %f > %t"
+close-hook \\.bz2$ "bzip2 -c %t > %f"
+
+##
+## folder hooks
+##
+# default
+folder-hook . " \
+	  set attribution = '* %n <%a> [%(%Y-%m-%d %H:%M)]:'; \
+	  set autoedit; \
+	  set recall = ask-no; \
+	  set record = +INBOX.Sent; \
+	  set sort = date-sent; \
+	unset sort_aux; \
+	  set timeout = 30 "
+
+# INBOX
+folder-hook '!' " \
+	  set sort = threads; \
+	  set sort_aux = date-received; \
+	  set timeout = 5 "
+
+# Sent
+folder-hook +INBOX.Sent " \
+	  set sort = date-sent "
+
+# Lists
+folder-hook +.lists.* " \
+	unset autoedit; \
+	unset recall; \
+	  set sort = threads; \
+	  set sort_aux = date-sent "
+
+# People
+folder-hook +.people* " \
+	  set sort = threads; \
+	  set sort_aux = date-sent "
+
+##
+## NNTP patch
+##
+# nntp://*
+folder-hook nntp://.* " \
+	  set record = +.Posted; \
+	  set sort = threads; \
+	  set sort_aux = date-received "
+
+# Posted
+folder-hook +.Posted " \
+	  set sort = date-sent "
+
+# message hooks
+message-hook . "set mime_forward = ask-no"
+message-hook "~h multipart" "set mime_forward = ask-yes"

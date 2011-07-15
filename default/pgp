@@ -1,0 +1,26 @@
+# Thomas Merkel <tm@core.io>
+
+# inspired by ideas of (at least):
+# - Wolfram Schlich <wolfram@schlich.org>
+
+# generic
+unset pgp_autosign
+unset pgp_autoencrypt
+# set pgp_create_traditional = ask-no
+  set pgp_entry_format = "%4n %t%f %4l/0x%k %-4a %2c %u" 
+  set pgp_ignore_subkeys
+unset pgp_long_ids
+# ifdef pgp_outlook_compat set pgp_outlook_compat = ask-no
+  set pgp_replysign
+  set pgp_replyencrypt
+  set pgp_replysignencrypted
+unset pgp_retainable_sigs
+# set pgp_sign_as = "KEY-ID"
+  set pgp_sort_keys = address
+  set pgp_strict_enc
+  set pgp_show_unusable
+  set pgp_timeout = 3600
+  set pgp_verify_sig
+
+# source the more detailed stuff according to your pgp type/version
+source ~/.mutt/default/pgp.d/gpg # || pgp(2|5|6)

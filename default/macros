@@ -1,0 +1,130 @@
+# Thomas Merkel <tm@core.io>
+
+# inspired by ideas of (at least):
+# - Wolfram Schlich <wolfram@schlich.org>
+
+##
+## mailbox/newsgroup navigation (default)
+##
+macro index <left> "<change-folder>?<toggle-mailboxes>" "show mailboxes"
+macro index -<left> "<change-newsgroup>?" "show newsgroups"
+macro index -I "<change-folder>!<enter>" "go to INBOX"
+macro pager -I "<change-folder>!<enter>" "go to INBOX"
+macro index -S "<change-folder>=INBOX.Sent<enter>" "go to =INBOX.Sent"
+macro pager -S "<change-folder>=INBOX.Sent<enter>" "go to =INBOX.Sent"
+#macro index -A "<change-folder>?<change-dir>^U~/mail.archive<enter>" "go to archive index"
+#macro pager -A "<change-folder>?<change-dir>^U~/mail.archive<enter>" "go to archive index"
+macro index S "<save-message>?<toggle-mailboxes>" "save-message into mailbox"
+macro pager S "<save-message>?<toggle-mailboxes>" "save-message into mailbox"
+
+##
+## printing
+##
+macro index p "<display-toggle-weed><print-message><display-toggle-weed>"
+macro pager p "<display-toggle-weed><print-message><display-toggle-weed>"
+
+##
+## unwanted mail (black-/whitelist + bayesian spam filtering)
+##
+# add address/domain to...
+# ...whitelist
+#macro index <f11> <pipe-message>"~/.procmail/bin/get_from.pl >>~/.procmail/filter/whitelist"<enter> "add address to whitelist"
+#macro pager <f11> <pipe-message>"~/.procmail/bin/get_from.pl >>~/.procmail/filter/whitelist"<enter> "add address to whitelist"
+#macro index <esc><f11> <pipe-message>"~/.procmail/bin/get_from.pl >>~/.procmail/filter/whitelist --domain"<enter> "add domain of address to whitelist"
+#macro pager <esc><f11> <pipe-message>"~/.procmail/bin/get_from.pl >>~/.procmail/filter/whitelist --domain"<enter> "add domain of address to whitelist"
+## ...blacklist and save mail in =.SPAM
+#macro index <f12> <pipe-message>"~/.procmail/bin/get_from.pl >>~/.procmail/filter/blacklist"<enter><save-message>=.SPAM<enter> "add address to blacklist and save mail in =.SPAM"
+#macro pager <f12> <pipe-message>"~/.procmail/bin/get_from.pl >>~/.procmail/filter/blacklist"<enter><save-message>=.SPAM<enter> "add address to blacklist and save mail in =.SPAM"
+#macro index <esc><F12> <pipe-message>"~/.procmail/bin/get_from.pl >>~/.procmail/filter/blacklist --domain"<enter><save-message>=.SPAM<enter> "add domain of address to blacklist and save mail in =.SPAM"
+#macro pager <esc><F12> <pipe-message>"~/.procmail/bin/get_from.pl >>~/.procmail/filter/blacklist --domain"<enter><save-message>=.SPAM<enter> "add domain of address to blacklist and save mail in =.SPAM"
+## editing these files
+#macro index <f9> "<shell-escape>${EDITOR} ~/.procmail/filter/whitelist<enter>" "edit whitelist"
+#macro pager <f9> "<shell-escape>${EDITOR} ~/.procmail/filter/whitelist<enter>" "edit whitelist"
+#macro index <f10> "<shell-escape>${EDITOR} ~/.procmail/filter/blacklist<enter>" "edit blacklist"
+#macro pager <f10> "<shell-escape>${EDITOR} ~/.procmail/filter/blacklist<enter>" "edit blacklist"
+
+##
+## SpamAssassin
+##
+#macro index ,n "<pipe-entry>sa-learn --ham<enter>" "(re-)classify message as non-spam"
+#macro pager ,n "<pipe-entry>sa-learn --ham<enter>" "(re-)classify message as non-spam"
+#macro index ,s "<pipe-entry>sa-learn --spam<enter>" "(re-)classify message as spam"
+#macro pager ,s "<pipe-entry>sa-learn --spam<enter>" "(re-)classify message as spam"
+#macro index r "<pipe-entry>sa-learn --ham<enter><reply>" "reply (and classify as non-spam)"
+#macro pager r "<pipe-entry>sa-learn --ham<enter><reply>" "reply (and classify as non-spam)"
+#macro index g "<pipe-entry>sa-learn --ham<enter><group-reply>" "group-reply (and classify as non-spam)"
+#macro pager g "<pipe-entry>sa-learn --ham<enter><group-reply>" "group-reply (and classify as non-spam)"
+#macro index l "<pipe-entry>sa-learn --ham<enter><list-reply>" "list-reply (and classify as non-spam)"
+#macro pager l "<pipe-entry>sa-learn --ham<enter><list-reply>" "list-reply (and classify as non-spam)"
+#macro index X "<pipe-entry>sa-learn --spam<enter><delete-message>" "delete-message (and classify as spam)"
+#macro pager X "<pipe-entry>sa-learn --spam<enter><delete-message>" "delete-message (and classify as spam)"
+macro index X "<save-message>=INBOX.Junk<enter>" "classify as spam and move to =INBOX.Junk"
+macro pager X "<save-message>=INBOX.Junk<enter>" "classify as spam and move to =INBOX.Junk"
+#ifdef purge-message 'macro index X "<pipe-entry>sa-learn --spam<enter><purge-message>" "purge-message (and classify as spam)"'
+#ifdef purge-message 'macro pager X "<pipe-entry>sa-learn --spam<enter><purge-message>" "purge-message (and classify as spam)"'
+
+
+macro index g "<group-reply>" "group-reply"
+macro pager g "<group-reply>" "group-reply"
+macro index r "<reply><enter>" "reply to a message"
+macro pager r "<reply><enter>" "reply to a message"
+
+##
+## some gpg macros
+##
+macro compose ,s "<filter-entry>gpg --no-verbose --clearsign<enter>y" "pgp clearsign"
+macro pager ,k "<shell-escape>gpg --recv-key " "get pgp key"
+macro pager ,l "<shell-escape>gpg --sign-key " "sign pgp key"
+macro index ,p "<pipe-message>gpg --batch --decrypt --list-only --status-fd 1 2>/dev/null | awk '/^\[GNUPG:\] ENC_TO / { print \"0x\" substr(\$3, 9, 8) }' | xargs gpg --list-keys | ( echo 'PGP encryption recipients:'; echo; less )<enter>" "show pgp encryption recipients"
+
+##
+## affecting the mutt config
+##
+macro index <f5> "<enter-command>source ~/.mutt/muttrc<enter>" "reload muttrc"
+macro index x "<enter-command>source ~/.mutt/muttrc<enter>" "reload muttrc"
+macro pager <f5> "<enter-command>source ~/.mutt/muttrc<enter>" "reload muttrc"
+
+##
+## affecting the message index
+##
+macro index <esc>r "<tag-pattern>~N | ~O<enter><tag-prefix><clear-flag>N<tag-prefix><untag-pattern>.<enter>" "mark all messages as read"
+macro pager <esc>r "<tag-pattern>~N | ~O<enter><tag-prefix><clear-flag>N<tag-prefix><untag-pattern>.<enter>" "mark all messages as read"
+# enable the resolve setting when (un)deleting messages (disabled by default in my config)
+macro index d "<enter-command>set resolve<enter><delete-message><enter-command>unset resolve<enter>" "delete-message"
+macro pager d "<enter-command>set resolve<enter><delete-message><enter-command>unset resolve<enter>" "delete-message"
+macro index u "<enter-command>set resolve<enter><undelete-message><enter-command>unset resolve<enter>" "undelete-message"
+macro pager u "<enter-command>set resolve<enter><undelete-message><enter-command>unset resolve<enter>" "undelete-message"
+macro index __ "<enter-command>set sort=threads<enter><limit>.<enter>" "show all msgs"
+macro index _f "<limit>~F<enter>" "show flagged msgs only"
+macro index _n "<limit>~N<enter>" "show new msgs only"
+macro index _o "<limit>~O<enter>" "show old msgs only"
+macro index _r "<limit>~R<enter>" "show read msgs only"
+macro index _u "<limit>~U<enter>" "show unread msgs only"
+macro index _U "<limit>! ~Q<enter>" "show un-replied msgs only"
+macro index _m "<limit>~p<enter>" "show msgs addressed to 'me' only"
+macro index _l "<limit>~y " "show certain labeled msgs only"
+macro index _t "<limit>~T<enter>" "show tagged msgs only"
+macro index _T "<enter-command>set sort=date-received<enter><limit>~y TODO<enter>" "show msgs labeled 'TODO' only"
+
+##
+## affecting the message content
+##
+# imitate the old search-body function
+macro index <esc>b "<search>~b " "search in bodies"
+# simulate the old url menu
+macro index ,u <pipe-message>urlview<enter> "extract URLs"
+macro pager ,u <pipe-message>urlview<enter> "extract URLs"
+macro pager ,r "<enter-command>set display_filter = \"tr a-zA-Z n-za-mN-ZA-M\"<enter><exit><display-message><enter-command>unset display_filter<enter>" "rot13"
+macro pager .r "<exit><display-message>" "re-display message"
+macro index ,x "<pipe-message>view-x-face | less -c<enter>" "view x-face"
+macro pager ,x "<pipe-message>view-x-face | less -c<enter>" "view x-face"
+macro index ,h "<pipe-message>mailhops | less -c<enter>" "view hops"
+macro pager ,h "<pipe-message>mailhops | less -c<enter>" "view hops"
+macro index ,v "<pipe-message>less -c<enter>" "view message with less"
+macro pager ,v "<pipe-message>less -c<enter>" "view message with less"
+macro index ,l "<edit-label>" "edit x-label"
+macro pager ,l "<edit-label>" "edit x-label"
+macro index ,L "<edit-label>\Cu<enter>" "clear x-label"
+macro pager ,L "<edit-label>\Cu<enter>" "clear x-label"
+macro index ,T "<edit-label>TODO<enter>" "set x-label to 'TODO'"
+macro pager ,T "<edit-label>TODO<enter>" "set x-label to 'TODO'"
