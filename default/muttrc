@@ -142,6 +142,7 @@ source ~/.mutt/default/attachments
 source ~/.mutt/default/bindings
 source ~/.mutt/default/colors
 source ~/.mutt/default/hooks
+source ~/.mutt/default/sidebar
 source ~/.mutt/default/macros
 source ~/.mutt/default/pgp
 source ~/.mutt/default/score

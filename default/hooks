@@ -31,7 +31,7 @@ folder-hook . " \
 	  set attribution = '* %n <%a> [%(%Y-%m-%d %H:%M)]:'; \
 	  set autoedit; \
 	  set recall = ask-no; \
-	  set record = +INBOX.Sent; \
+	  set record = Sent; \
 	  set sort = date-sent; \
 	unset sort_aux; \
 	  set timeout = 30 "
@@ -43,7 +43,7 @@ folder-hook '!' " \
 	  set timeout = 5 "
 
 # Sent
-folder-hook +INBOX.Sent " \
+folder-hook +Sent " \
 	  set sort = date-sent "
 
 # Lists

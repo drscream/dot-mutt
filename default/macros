@@ -18,6 +18,16 @@ macro index S "<save-message>?<toggle-mailboxes>" "save-message into mailbox"
 macro pager S "<save-message>?<toggle-mailboxes>" "save-message into mailbox"
 
 ##
+## sidebar
+##
+# sidebar shenanigans
+macro index B "<enter-command>toggle sidebar_visible<enter><refresh>"
+macro pager B "<enter-command>toggle sidebar_visible<enter><defaultraw-screen>"
+# act like normal vi keys but browse sidebar folders
+macro index K  ":push <sidebar-prev><sidebar-open><enter>"
+macro index J  ":push <sidebar-next><sidebar-open><enter>"
+
+##
 ## printing
 ##
 macro index p "<display-toggle-weed><print-message><display-toggle-weed>"
