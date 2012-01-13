@@ -14,11 +14,11 @@ bind pager   <delete> delete-message
 bind pager   <esc>f   forget-passphrase
 bind pager   F        flag-message
 bind pager   f        forward-message
-bind pager   \Cf      followup-message
+#bind pager   \Cf      followup-message
 bind pager   G        group-reply
 bind pager   \Cn      search-next
 bind pager   \Cp      search-opposite
-bind pager   p        post-message
+#bind pager   p        post-message
 #ifdef purge-message bind pager P purge-message
 
 # index (message list)
@@ -31,18 +31,18 @@ bind index   <        first-entry
 bind index   >        last-entry
 bind index   l        list-reply
 bind index   L        limit
-bind index   p        post-message
+#bind index   p        post-message
 bind index   <delete> delete-message
 bind index   <esc>f   forget-passphrase
 bind index   F        flag-message
 bind index   f        forward-message
-bind index   \Cf      followup-message
+#bind index   \Cf      followup-message
 bind pager   G        group-reply
-bind index   <esc>g   get-message
+#bind index   <esc>g   get-message
 bind index   \Cn      search-next
 bind index   \Cp      search-opposite
 bind index   <esc>v   collapse-thread
-bind index   p        post-message
+#bind index   p        post-message
 #ifdef purge-message bind index P purge-message
 #ifdef mark-message bind index ~ mark-message
 
