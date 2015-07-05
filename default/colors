@@ -119,7 +119,7 @@ color body brightgreen default "(((ftp|http|https|news|telnet)://|(file|mailto|n
 color body yellow black "</?\w+>" # HTML tags
 color body brightmagenta black "\\$[a-zA-Z][-_a-zA-Z]+" # $variables
 color body brightyellow default "(^|[[:space:]]+)[;:=]-*[)/(><pPDOQ]+($|[[:space:]]+)" # smileys
-color body brightyellow default "[-a-zA-ZäöüÄÖÜß_0-9.+]+@[-a-zA-Z_0-9.]+" # e-mail addresses
+color body brightyellow default "[-a-zA-ZÃ¤Ã¶Ã¼Ã„Ã–ÃœÃŸ_0-9.+]+@[-a-zA-Z_0-9.]+" # e-mail addresses
 color body brightred brightdefault "(warning|alert|caution|fail(ure|ed))" # "interesting" words
 color body brightred default "\\$" # ?
 color body red default "^[*] .*:$" # attribution line
@@ -159,14 +159,14 @@ color body white red "(19|20\)?[0-9][0-9][/-](0[0-9]|1[012])[/-]([012][0-9]|3[01
 #  "6.Apr" "6. April 1967"
 color body white red "\
 ((0?[1-9]|[12][0-9]|3[012])[.]? ?)?\
-\\<(Jan(uar)?|Feb(ruar)?|M(ä|ae)rz|Apr(il)?|Mai|Juni?|Juli?|Aug(ust)?|\
+\\<(Jan(uar)?|Feb(ruar)?|M(Ã¤|ae)rz|Apr(il)?|Mai|Juni?|Juli?|Aug(ust)?|\
 Sept(ember)?|Okt(ober)?|Nov(ember)?|Dez(ember)?)\\> *\
 ((19|20)?[0-9][0-9])?"
 
 #  Month Day
 #  "Jan 1st"  "Feb. 2nd"  "March 3rd 03"  "April 6th 1967"
 color body brightwhite blue "\
-(\\<(Jan(uar)?|Feb(ruar)?|M(ä|ae)rz|Apr(il)?|Mai|Juni?|Juli?|Aug(ust)?|\
+(\\<(Jan(uar)?|Feb(ruar)?|M(Ã¤|ae)rz|Apr(il)?|Mai|Juni?|Juli?|Aug(ust)?|\
 Sept(ember)?|Okt(ober)?|Nov(ember)?|Dez(ember)?)\\>|\
 \\<(Jan(uary)?|Feb(ruary)?|Mar(ch)|Apr(il)?|May|June?|July?|Aug(ust)?|\
 Sept(ember)?|Oct(ober)?|Nov(ember)?|Dec(ember)?)\\>)\
@@ -179,7 +179,7 @@ Sept(ember)?|Oct(ober)?|Nov(ember)?|Dec(ember)?)\\>)\
 #  Tag Monat Jahr
 #  "6.April67"  "6. Apr. 67"  "6 April 1967"
 color body brightred blue "((0?[1-9]|[12][0-9]|3[012])[.]? ?)?\
-(\\<(Jan(uar)?|Feb(ruar)?|M(ä|ae)rz|Apr(il)?|Mai|Juni?|Juli?|Aug(ust)?|\
+(\\<(Jan(uar)?|Feb(ruar)?|M(Ã¤|ae)rz|Apr(il)?|Mai|Juni?|Juli?|Aug(ust)?|\
 Sept(ember)?|Okt(ober)?|Nov(ember)?|Dez(ember)?)\\>|\
 \\<(Jan(uary)?|Feb(ruary)?|Mar(ch)|Apr(il)?|May|June?|July?|Aug(ust)?|\
 Sept(ember)?|Oct(ober)?|Nov(ember)?|Dec(ember)?)\\>)\
