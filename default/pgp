@@ -22,5 +22,7 @@ unset pgp_retainable_sigs
   set pgp_timeout = 3600
   set pgp_verify_sig
 
+message-hook '!(~g|~G) ~b"^-----BEGIN\ PGP\ (SIGNED\ )?MESSAGE"' "exec check-traditional-pgp"
+
 # source the more detailed stuff according to your pgp type/version
 source ~/.mutt/default/pgp.d/gpg # || pgp(2|5|6)
