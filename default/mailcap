@@ -1,16 +1,21 @@
 # Thomas Merkel <tm@core.io>
 
 #text/plain; cat %s; copiousoutput
-text/calendar; cat %s; copiousoutput
+#text/calendar; cat %s; copiousoutput
+text/calendar; ~/.bin/viewical.py; copiousoutput
 #text/x-java; cat %s; copiousoutput
 text/x-java; source-highlight -s java -f esc --style-file=esc.style -n -i %s; copiousoutput
 audio/mpeg; mpg321 %s
 #application/ogg; ogg123 %s
 application/ogg; mp3blaster --dont-quit %s
 application/pgp-signature; cat %s; copiousoutput
-application/x-pkcs7-signature; cat %s; copiousoutput
-text/html; links -dump %s; copiousoutput; nametemplate=%s.html
-message/html; links -dump %s; copiousoutput; nametemplate=%s.html
+#application/x-pkcs7-signature; cat %s; copiousoutput
+#text/html; w3m -I %{charset} -T text/html -dump %s; copiousoutput; nametemplate=%s.html
+text/html; ~/.mutt/bin/view-html-wrapper.sh %s %{charset}; needsterminal
+text/html; ~/.mutt/bin/view-html-wrapper.sh %s %{charset}; needsterminal; copiousoutput; nametemplate=%s.html
+#text/html; w3m -I %{charset} -T text/html -dump %s; copiousoutput; nametemplate=%s.html
+#text/html; ~/.mutt/bin/view_attachment.sh %s html
+message/html; w3m -I %{charset} -T text/html %s; copiousoutput; nametemplate=%s.html
 #text/html; vilistextum --remove-empty-alt --no-image --shrink-lines --links %s - ; copiousoutput
 #message/html; vilistextum --remove-empty-alt --no-image --shrink-lines --links %s - ; copiousoutput
 text/x-diff; cat %s; copiousoutput
