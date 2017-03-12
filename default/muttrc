@@ -46,7 +46,6 @@ unset ignore_linear_white_space
   set implicit_autoview
   set include
   set indent_string = "> "
-  set locale = "de_DE"
   set mail_check = 5
   set mailcap_path = "~/.mutt/default/mailcap"
 # set mailcap_sanitize
