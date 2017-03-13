@@ -1,5 +1,3 @@
-# Thomas Merkel <tm@core.io>
-
 # generic
 unset abort_nosubject
   set abort_unmodified
@@ -150,3 +148,5 @@ source ~/.mutt/default/score
 
 # show version on startup
 exec show-version
+
+# vim:ft=muttrc:

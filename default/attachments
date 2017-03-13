@@ -1,5 +1,5 @@
-# Thomas Merkel <tm@core.io>
-
 # attachments
 set attach_sep = "\n"
 set attach_split
+
+# vim:ft=muttrc:

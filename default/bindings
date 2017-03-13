@@ -1,5 +1,3 @@
-# Thomas Merkel <tm@core.io>
-
 # pager (message content)
 bind pager   <return> exit
 bind pager   <space>  exit
@@ -67,3 +65,5 @@ bind compose <delete> detach-file
 # attachments menu
 bind attach  <left>   exit
 bind attach  <right>  view-attach
+
+# vim:ft=muttrc:

@@ -1,8 +1,3 @@
-# Thomas Merkel <tm@core.io>
-
-# inspired by ideas of (at least):
-# - Wolfram Schlich <wolfram@schlich.org>
-
 ##
 ## mailbox/newsgroup navigation (default)
 ##
@@ -138,3 +133,5 @@ macro index ,L "<edit-label>\Cu<enter>" "clear x-label"
 macro pager ,L "<edit-label>\Cu<enter>" "clear x-label"
 macro index ,T "<edit-label>TODO<enter>" "set x-label to 'TODO'"
 macro pager ,T "<edit-label>TODO<enter>" "set x-label to 'TODO'"
+
+# vim:ft=muttrc:

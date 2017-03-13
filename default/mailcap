@@ -1,5 +1,3 @@
-# Thomas Merkel <tm@core.io>
-
 #text/plain; cat %s; copiousoutput
 #text/calendar; cat %s; copiousoutput
 text/calendar; ~/.mutt/bin/view-ical.py; copiousoutput
@@ -45,3 +43,5 @@ application/ms-Excel; excel2text %s; copiousoutput
 application/rtf; rtf2text %s; copiousoutput
 application/pdf; pdftotext %s -; copiousoutput
 application/ms-tnef; tnef2txt %s; copiousoutput
+
+# vim:ft=muttrc:
