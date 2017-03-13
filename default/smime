@@ -1,1 +1,3 @@
   set crypt_autosmime = no
+
+# vim:ft=muttrc:

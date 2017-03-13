@@ -65,3 +65,5 @@ bind compose <delete> detach-file
 # attachments menu
 bind attach  <left>   exit
 bind attach  <right>  view-attach
+
+# vim:ft=muttrc:

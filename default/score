@@ -15,3 +15,5 @@ unscore *
   score ~k 128
   score ~g 256
   score ~G 512
+
+# vim:ft=muttrc:

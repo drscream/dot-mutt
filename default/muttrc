@@ -148,3 +148,5 @@ source ~/.mutt/default/score
 
 # show version on startup
 exec show-version
+
+# vim:ft=muttrc:

@@ -69,3 +69,5 @@ folder-hook +.Posted " \
 # message hooks
 message-hook . "set mime_forward = ask-no"
 message-hook "~h multipart" "set mime_forward = ask-yes"
+
+# vim:ft=muttrc:

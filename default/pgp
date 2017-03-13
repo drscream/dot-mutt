@@ -21,3 +21,5 @@ message-hook '!(~g|~G) ~b"^-----BEGIN\ PGP\ (SIGNED\ )?MESSAGE"' "exec check-tra
 
 # source the more detailed stuff according to your pgp type/version
 source ~/.mutt/default/pgp.d/gpg # || pgp(2|5|6)
+
+# vim:ft=muttrc:

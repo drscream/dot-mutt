@@ -277,3 +277,5 @@ mono markers bold
 mono message bold
 mono status underline
 mono tree none
+
+# vim:ft=muttrc:

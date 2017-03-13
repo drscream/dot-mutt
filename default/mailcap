@@ -43,3 +43,5 @@ application/ms-Excel; excel2text %s; copiousoutput
 application/rtf; rtf2text %s; copiousoutput
 application/pdf; pdftotext %s -; copiousoutput
 application/ms-tnef; tnef2txt %s; copiousoutput
+
+# vim:ft=muttrc:
