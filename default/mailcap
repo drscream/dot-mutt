@@ -2,7 +2,7 @@
 
 #text/plain; cat %s; copiousoutput
 #text/calendar; cat %s; copiousoutput
-text/calendar; ~/.bin/viewical.py; copiousoutput
+text/calendar; ~/.mutt/bin/view-ical.py; copiousoutput
 #text/x-java; cat %s; copiousoutput
 text/x-java; source-highlight -s java -f esc --style-file=esc.style -n -i %s; copiousoutput
 audio/mpeg; mpg321 %s
