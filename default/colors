@@ -17,7 +17,7 @@ color index green default ~O # old
 color index cyan default ~p # mail to myself
 color index brightcyan default ~P # mail from myself
 color index yellow default ~Q # replied to
-color index color117 default ~N # new
+color index color70 default ~N # new
 color index brightyellow default ~v # collapsed thread
 color index brightmagenta default ~F # flagged
 color index color124 default ~D # deleted
