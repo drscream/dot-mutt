@@ -9,7 +9,7 @@ audio/mpeg; mpg321 %s
 #application/ogg; ogg123 %s
 application/ogg; mp3blaster --dont-quit %s
 application/pgp-signature; cat %s; copiousoutput
-#application/x-pkcs7-signature; cat %s; copiousoutput
+application/pkcs7-signature; openssl pkcs7 -in %s -inform der -noout -print_certs -text | less; needsterminal
 #text/html; w3m -I %{charset} -T text/html -dump %s; copiousoutput; nametemplate=%s.html
 text/html; ~/.mutt/bin/view-html-wrapper.sh %s %{charset}; needsterminal
 text/html; ~/.mutt/bin/view-html-wrapper.sh %s %{charset}; needsterminal; copiousoutput; nametemplate=%s.html
