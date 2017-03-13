@@ -1,11 +1,3 @@
-# Thomas Merkel <tm@core.io>
-
-# inspired by ideas of (at least):
-# - Sven Guckes <guckes-mutt-color-body@math.fu-berlin.de>
-# - Wolfram Schlich <wolfram@schlich.org>
-
-# [()[]{}[:punct:][:space:]]+
-
 # generic
 color normal color252 default # normal text
 color attachment color111 color233 # attachment delimiters

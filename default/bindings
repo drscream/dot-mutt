@@ -1,5 +1,3 @@
-# Thomas Merkel <tm@core.io>
-
 # pager (message content)
 bind pager   <return> exit
 bind pager   <space>  exit

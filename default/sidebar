@@ -1,5 +1,3 @@
-# Thomas Merkel <tm@core.io>
-
 # these only work with the sidebar patch
 set sidebar_visible=no                          # yep
 set sidebar_width=24                            # enough for me

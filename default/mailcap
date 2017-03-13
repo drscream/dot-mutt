@@ -1,5 +1,3 @@
-# Thomas Merkel <tm@core.io>
-
 #text/plain; cat %s; copiousoutput
 #text/calendar; cat %s; copiousoutput
 text/calendar; ~/.bin/viewical.py; copiousoutput
