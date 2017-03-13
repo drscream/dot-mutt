@@ -7,35 +7,35 @@
 # [()[]{}[:punct:][:space:]]+
 
 # generic
-color normal white default # normal text
-color attachment brightwhite red # attachment delimiters
+color normal color252 default # normal text
+color attachment color111 color233 # attachment delimiters
 color bold green default # bold text
 color underline yellow default # underlined text
-color error brightyellow red # error messages
-color indicator brightwhite red # the indicator bar in the index/pager
-color markers brightwhite red
+color error color193 color124 # error messages
+color indicator color255 color235 # the indicator bar in the index/pager
+color markers color142 default
 color message brightyellow default
-color status brightwhite blue
-color tree brightyellow default # the tree/thread lines
-color signature brightred default # the sender's signature
-color tilde brightblue default # the tilde spacers
+color status color172 color235
+color tree color244 default # the tree/thread lines
+color signature color244 default  # the sender's signature
+color tilde color142 default # the tilde spacers
 
 # message index
 color index green default ~O # old
 color index cyan default ~p # mail to myself
 color index brightcyan default ~P # mail from myself
 color index yellow default ~Q # replied to
-color index brightgreen default ~N # new
+color index color117 default ~N # new
 color index brightyellow default ~v # collapsed thread
 color index brightmagenta default ~F # flagged
-color index brightred default ~D # deleted
+color index color124 default ~D # deleted
 color index brightblue default ~T # tagged
 
 ##
 ## content of messages
 ##
 # header
-color hdrdefault default default
+color hdrdefault color248 default
 color header brightred default ^message-id:
 color header brightred default ^in-reply-to:
 color header brightred default ^references:
@@ -61,7 +61,7 @@ color header brightgreen default ^mailing-list:
 color header brightgreen default ^list-
 color header brightgreen default ^newsgroups:
 color header green default ^followup-to:
-color header brightcyan default ^subject:
+color header color226 default ^subject:
 color header brightcyan default ^importance:
 color header brightcyan default ^status:
 color header brightcyan default ^precedence:
@@ -114,9 +114,8 @@ color body brightblue default "^gpg:.*checking at depth.*"
 color body brightblue default "^gpg:.*next trustdb check due at" # YYYY-MM-DD
 
 # body: others
-color body brightgreen default "(((ftp|http|https|news|telnet)://|(file|mailto|news|finger):|www\\.)[-a-zA-Z@0-9_.:]*[a-zA-Z0-9](/[^][{} \t\n\r\"<>()]*[^][{} \t\n\r\"<>().,:])?|<(url|URL):[^ ]*>)" # URLs
-# color body brightwhite default "(^|[[:space:]]+)?([[:punct:]]|[?!])*[*_/][-_[:alnum:]]+[*_/]([[:punct:]]|[?!])*($|[[:space:]]+)" # emphasized text: *blah* _blah_ /blah/
-color body yellow black "</?\w+>" # HTML tags
+color body color111 default "(((ftp|http|https|news|telnet)://|(file|mailto|news|finger):|www\\.)[-a-zA-Z@0-9_.:]*[a-zA-Z0-9](/[^][{} \t\n\r\"<>()]*[^][{} \t\n\r\"<>().,:])?|<(url|URL):[^ ]*>)" # URLs
+color body color68 black "</?\w+>" # HTML tags
 color body brightmagenta black "\\$[a-zA-Z][-_a-zA-Z]+" # $variables
 color body brightyellow default "(^|[[:space:]]+)[;:=]-*[)/(><pPDOQ]+($|[[:space:]]+)" # smileys
 color body brightyellow default "[-a-zA-ZäöüÄÖÜß_0-9.+]+@[-a-zA-Z_0-9.]+" # e-mail addresses
@@ -262,15 +261,16 @@ color body white red "(1 ?)?\\(800\\) ?[-0-9]+( x[0-9]+)?"
 color body white red "(1 ?)?\\(800\\) ?[-0-9]+( ext ?[0-9]+)?"
 
 # quotations (in the body)
-color quoted  green default
-color quoted1 cyan default
-color quoted2 brightgreen default
-color quoted3 brightcyan default
-color quoted4 green default
-color quoted5 cyan default
-color quoted6 green default
-color quoted7 brightcyan default
-color quoted8 brightgreen default
+color quoted color34   default
+color quoted1 color142 default
+color quoted2 color34  default
+color quoted3 color142 default
+color quoted4 color34  default
+color quoted5 color142 default
+color quoted6 color34  default
+color quoted7 color142 default
+color quoted8 color34  default
+color quoted9 color142 default
 
 ##
 ## monochrome
