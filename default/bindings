@@ -17,6 +17,8 @@ bind pager   G        group-reply
 bind pager   \Cn      search-next
 bind pager   \Cp      search-opposite
 #bind pager   p        post-message
+bind pager   -        noop
+bind pager   .        noop
 #ifdef purge-message bind pager P purge-message
 
 # index (message list)
