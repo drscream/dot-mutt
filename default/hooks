@@ -34,7 +34,9 @@ folder-hook . " \
 # INBOX
 folder-hook '!' " \
 	  set sort = threads; \
-	  set sort_aux = date-received; \
+	  set strict_threads = yes ; \
+	  set sort_browser = reverse-date ; \
+	  set sort_aux = last-date-received; \
 	  set timeout = 5 "
 
 # Sent
