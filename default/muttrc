@@ -103,7 +103,7 @@ unset suspend
 unset use_8bitmime
   set use_domain
   set use_from
-unset use_ipv6
+  set use_ipv6
   set user_agent
 unset wait_key
   set wrap = 0
