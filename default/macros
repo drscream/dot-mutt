@@ -35,6 +35,11 @@ macro index O "<shell-escape>offlineimap<enter>"           "run offlineimap to s
 macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inbox"
 
 ##
+## NotMuch
+##
+macro index \\\\ "<vfolder-from-query>" "looks up a hand"
+
+##
 ## unwanted mail (black-/whitelist + bayesian spam filtering)
 ##
 # add address/domain to...
