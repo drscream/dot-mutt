@@ -1,7 +1,7 @@
 ##
 ## mailbox/newsgroup navigation (default)
 ##
-macro index <left> "<change-folder>?<toggle-mailboxes>" "show mailboxes"
+macro index <left> "<change-folder>?" "show mailboxes"
 macro index -<left> "<change-newsgroup>?" "show newsgroups"
 macro index -I "<change-folder>!<enter>" "go to INBOX"
 macro pager -I "<change-folder>!<enter>" "go to INBOX"
