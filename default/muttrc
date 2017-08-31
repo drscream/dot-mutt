@@ -20,7 +20,7 @@ unset bounce_delivered
 # set dotlock_program = /usr/bin/mutt_dotlock
   set dsn_notify = "failure,delay" # RFC1894
   set dsn_return = "hdrs"
-  set editor = "vim +'set textwidth=70' +'set nohls'"
+  set editor = "vim +'set spell spelllang=de,en' +'set textwidth=70' +'set nohls'"
   set edit_headers
   set envelope_from
 # set escape = "~"
