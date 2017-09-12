@@ -43,18 +43,12 @@
 #
 #########################################################################
 
-# Used programms:
-UNCOMPFACE=uncompface	# from compface package
-ICONTOPBM=icontopbm	# from pbmplus/netpbm package
+PATH=${PATH}:${HOME}/.mutt/bin
 
-# Image viewer (should be able to read from stdin!): 
-if [ -n "$DISPLAY" ]
-then
-    VIEWER="xli stdin"		# Use xli as X11 image viewer
-    # VIEWER="xv -quit -"	# Use xv as X11 image viewer
-else
-    VIEWER=image2ascii		# Use image2ascii as ASCII image viewer
-fi
+# Used programms:
+UNCOMPFACE="uncompface -X"   # from compface package
+ICONTOPBM=xbmtopbm           # from pbmplus/netpbm package
+VIEWER=image2ascii.sh        # Use image2ascii as ASCII image viewer
 
 sed -n -e '/^X-Face:/,/^[^ \t]/ p' $1 \
 | sed -n -e 's/^X-Face://' -e '/^[ \t]/ p' \
