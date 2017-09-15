@@ -141,10 +141,8 @@ color body red black '\*?\<xp\>\*?' # -"-, xp only
 #  allow only months in range 01-12 and days in range 00-31:
 color body white red "(19|20\)?[0-9][0-9][/-](0[0-9]|1[012])[/-]([012][0-9]|3[01])"
 
-#  matches: 4.6.1967 and "4.6. 1967"  "4. 6. 67"
-#color body blue green "\
-#(0?[1-9]|[12][0-9]|3[012])[.] ?\
-#([1-9]|1[012])[.] ?(19|20)?([0-9][0-9])?"
+#  matches: 6.10.2016 | 10.2.2017 | 06.10.16 | 23.10.2016 | 11.09.2017
+color body blue green "(0?[1-9]|[12][0-9]|3[012])\.([1-9]|0[1-9]|1[012])\.(19|20)?([0-9][0-9])"
 
 #  Tag+Monat (German month names)
 #  "6.Apr" "6. April 1967"
@@ -183,7 +181,7 @@ Sept(ember)?|Oct(ober)?|Nov(ember)?|Dec(ember)?)\\>)\
 #     9h  12:00h  12.05Uhr  "12 Uhr c.t."  "16h s.t"
 #color body brightyellow blue "([01]?[0-9]|2[0-4])([.:][0-5][0-9])?([.:][0-5][0-9])?(am|pm|h| Uhr)( *[cs][.]t[.])?"
 color body brightyellow blue "([0-1][0-9]|2[0-3])([:.][0-5][0-9])?([:.][0-5][0-9])?(am|pm|h| Uhr)( *[cs][.]t[.])?" # time
-color body brightyellow blue "([0-1][0-9]|2[0-3])[:.][0-5][0-9][:.][0-5][0-9]" # time
+color body brightyellow blue "([0-1][0-9]|2[0-3])[:.][0-5][0-9][:.][0-5][0-9][^0-9]" # time
 
 # 020410: Time Frames
 # matches: 10:00-12:00  09.30 - 13.30
