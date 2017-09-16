@@ -118,7 +118,7 @@ color body green default "[-_=+~/\*]{3,}" # border lines
 color body green default "\( *[-+=#*~_]\){4,}" # -"-
 color body brightred default "[!?]{3,}" # extensive use of exclamation and question marks: "!!!"  "???"
 color body brightgreen default "[.0-9]+ ?%" # percentages: "xx.x %"
-color body black yellow "((dm|euro?|\$\$\$) *[1-9][0-9]*([.,][0-9]*-?-?)?|[1-9][0-9.,]*(--?|[0-9][0-9])? *(dm|euro?|mark|\$\$\$))" # money
+color body black yellow "((dm|euro?|\\$\\$\\$)\ *[1-9][0-9]*([.,][0-9]*-?-?)?|[1-9][0-9.,]*(--?|[0-9][0-9])?\ *(dm|euro?|mark|\\$\\$\\$))" # money
 color body black yellow "[1-9][0-9]? *(cents?|pfennig)" # -"-
 color body yellow default "([(](c|r)[)]|\\[tm\\])" # copyright, registered, trademark: (c), (r), [tm]
 color body white red "(linux *)?(debian|mandrake|redhat|suse|gentoo|turbolinux|sco|caldera|united|unitedlinux) *(linux)?( *)?[0-9]([.][0-9])?([.][0-9])?" # major linux distributions and their versions
