@@ -40,6 +40,17 @@ macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to s
 macro index \\\\ "<vfolder-from-query>" "looks up a hand"
 
 ##
+## Tasks
+##
+macro index,pager ,ta '<pipe-message>~/.mutt/bin/header2task.sh add<enter>F'
+macro index,pager ,tA '<pipe-message>~/.mutt/bin/header2task.sh annotate<enter>'
+macro index,pager ,td '<pipe-message>~/.mutt/bin/header2task.sh done<enter>'
+macro index,pager ,tf '<pipe-message>~/.mutt/bin/header2task.sh find<enter>'
+macro index,pager ,tj '<pipe-message>~/.mutt/bin/header2task.sh join<enter>F'
+macro index,pager ,tp '<pipe-message>~/.mutt/bin/header2task.sh project<enter>'
+macro index,pager ,te '<pipe-message>~/.mutt/bin/header2task.sh edit<enter>'
+
+##
 ## unwanted mail (black-/whitelist + bayesian spam filtering)
 ##
 # add address/domain to...
