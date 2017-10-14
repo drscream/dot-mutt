@@ -85,8 +85,8 @@ macro index,pager ,te '<pipe-message>~/.mutt/bin/header2task.sh edit<enter>'
 #macro pager l "<pipe-entry>sa-learn --ham<enter><list-reply>" "list-reply (and classify as non-spam)"
 #macro index X "<pipe-entry>sa-learn --spam<enter><delete-message>" "delete-message (and classify as spam)"
 #macro pager X "<pipe-entry>sa-learn --spam<enter><delete-message>" "delete-message (and classify as spam)"
-macro index X "<save-message>=INBOX.Junk<enter>" "classify as spam and move to =INBOX.Junk"
-macro pager X "<save-message>=INBOX.Junk<enter>" "classify as spam and move to =INBOX.Junk"
+macro index X "<save-message>+Junk<enter><enter>" "classify as spam and move to =Junk"
+macro pager X "<save-message>+Junk<enter><enter>" "classify as spam and move to =Junk"
 #ifdef purge-message 'macro index X "<pipe-entry>sa-learn --spam<enter><purge-message>" "purge-message (and classify as spam)"'
 #ifdef purge-message 'macro pager X "<pipe-entry>sa-learn --spam<enter><purge-message>" "purge-message (and classify as spam)"'
 
