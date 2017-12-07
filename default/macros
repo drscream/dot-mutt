@@ -40,6 +40,17 @@ macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to s
 macro index \\\\ "<vfolder-from-query>" "looks up a hand"
 
 ##
+## Tasks
+##
+macro index,pager ,ta '<pipe-message>~/.mutt/bin/header2task.sh add<enter>F'
+macro index,pager ,tA '<pipe-message>~/.mutt/bin/header2task.sh annotate<enter>'
+macro index,pager ,td '<pipe-message>~/.mutt/bin/header2task.sh done<enter>'
+macro index,pager ,tf '<pipe-message>~/.mutt/bin/header2task.sh find<enter>'
+macro index,pager ,tj '<pipe-message>~/.mutt/bin/header2task.sh join<enter>F'
+macro index,pager ,tp '<pipe-message>~/.mutt/bin/header2task.sh project<enter>'
+macro index,pager ,te '<pipe-message>~/.mutt/bin/header2task.sh edit<enter>'
+
+##
 ## unwanted mail (black-/whitelist + bayesian spam filtering)
 ##
 # add address/domain to...
@@ -74,8 +85,8 @@ macro index \\\\ "<vfolder-from-query>" "looks up a hand"
 #macro pager l "<pipe-entry>sa-learn --ham<enter><list-reply>" "list-reply (and classify as non-spam)"
 #macro index X "<pipe-entry>sa-learn --spam<enter><delete-message>" "delete-message (and classify as spam)"
 #macro pager X "<pipe-entry>sa-learn --spam<enter><delete-message>" "delete-message (and classify as spam)"
-macro index X "<save-message>=INBOX.Junk<enter>" "classify as spam and move to =INBOX.Junk"
-macro pager X "<save-message>=INBOX.Junk<enter>" "classify as spam and move to =INBOX.Junk"
+macro index X "<save-message>+Junk<enter><enter>" "classify as spam and move to =Junk"
+macro pager X "<save-message>+Junk<enter><enter>" "classify as spam and move to =Junk"
 #ifdef purge-message 'macro index X "<pipe-entry>sa-learn --spam<enter><purge-message>" "purge-message (and classify as spam)"'
 #ifdef purge-message 'macro pager X "<pipe-entry>sa-learn --spam<enter><purge-message>" "purge-message (and classify as spam)"'
 
@@ -132,8 +143,8 @@ macro index ,u <pipe-message>urlview<enter> "extract URLs"
 macro pager ,u <pipe-message>urlview<enter> "extract URLs"
 #macro pager ,r "<enter-command>set display_filter = \"tr a-zA-Z n-za-mN-ZA-M\"<enter><exit><display-message><enter-command>unset display_filter<enter>" "rot13"
 macro pager .r "<exit><display-message>" "re-display message"
-macro index ,x "<pipe-message>view-x-face | less -c<enter>" "view x-face"
-macro pager ,x "<pipe-message>view-x-face | less -c<enter>" "view x-face"
+macro index ,x "<pipe-message>~/.mutt/bin/view-x-face.sh | less -c<enter>" "view x-face"
+macro pager ,x "<pipe-message>~/.mutt/bin/view-x-face.sh | less -c<enter>" "view x-face"
 macro index ,h "<pipe-message>mailhops | less -c<enter>" "view hops"
 macro pager ,h "<pipe-message>mailhops | less -c<enter>" "view hops"
 macro index ,v "<pipe-message>less -c<enter>" "view message with less"

@@ -1,3 +1,6 @@
-  set crypt_autosmime = no
+  set crypt_autosign           = no
+  set crypt_replyencrypt       = yes
+  set crypt_replysign          = yes
+  set crypt_replysignencrypted = no
 
 # vim:ft=muttrc:
