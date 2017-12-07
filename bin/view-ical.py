@@ -44,25 +44,25 @@ def print_vevent (event):
     organizers = mv_attr(event.get('organizer', []))
     for i, organizer in enumerate(organizers):
         if organizer.lower().startswith('mailto'):
-            organizers[i] = organizer[7:]
+            organizers[i] = organizer[7:].encode('utf-8')
 
     attendees = mv_attr(event.get('attendee', []))
     for i, attendee in enumerate(attendees):
         if attendee.lower().startswith('mailto'):
-            attendees[i] = attendee[7:]
+            attendees[i] = attendee[7:].encode('utf-8')
 
     description = event.get('description', [])
     location = event.get('location', [])
     #.encode('utf-8')
 
     print '='*70
-    print event['summary']
+    print event['summary'].encode('utf-8')
     print '='*70
     print
 
     print '       WHEN: %s - %s' % (event_start, event_end)
     if location:
-      print '      WHERE: %s' % (location)
+      print '      WHERE: %s' % (location.encode('utf-8'))
     print ' ORGANIZERS:', '\n            '.join(organizers)
     print '  ATTENDING:', '\n             '.join(attendees)
 
