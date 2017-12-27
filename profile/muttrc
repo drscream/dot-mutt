@@ -1,0 +1,12 @@
+# Thomas Merkel <tm@core.io>
+
+# Profile variables
+source ~/.mutt/profile/hooks
+
+# Shortcuts for all accounts
+macro index ,1 '<enter-command>source ~/.mutt/profile/account.core<enter><change-folder>!<enter>'
+macro index ,2 '<enter-command>source ~/.mutt/profile/account.avan<enter><change-folder>!<enter>'
+macro index ,3 '<enter-command>source ~/.mutt/profile/account.ebsd<enter><change-folder>!<enter>'
+macro index ,4 '<enter-command>source ~/.mutt/profile/account.nbsd<enter><change-folder>!<enter>'
+
+# source some personal files

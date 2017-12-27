@@ -1,0 +1,6 @@
+##
+## hooks variables
+##
+set my_vim_version="`vim --version | head -n1`"
+set my_os_version="`uname -sr | sed 's/\#/\\\\#/'`"
+set my_real_name="`nc koeln.ccc.de 23 | cut -d : -f 2`"
