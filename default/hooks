@@ -19,6 +19,11 @@ open-hook \\.bz2$ "bzip2 -cd %f > %t"
 close-hook \\.bz2$ "bzip2 -c %t > %f"
 
 ##
+## save hooks
+##
+#save-hook . "="
+
+##
 ## folder hooks
 ##
 # default
@@ -39,7 +44,7 @@ folder-hook '!' " \
 	  set timeout = 5 "
 
 # Sent
-folder-hook \=Sent " \
+folder-hook =Sent " \
 	  set sort = date-sent "
 
 # Lists
