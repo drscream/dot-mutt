@@ -90,7 +90,7 @@ unset save_name
   set smart_wrap
   set smileys = "(>From )|(:[-^]?[][)(><}{|/DP])"		# quoting
   set sort_alias = alias
-  set sort_browser = alpha								# reverse-last-date
+  set sort_browser = unsorted
 unset sort_re
   set spoolfile = +
   set status_on_top
